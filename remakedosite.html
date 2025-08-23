@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Título da Sua Nova Página - MegaSky Network</title>
+    <link rel="icon" href="Imagens/icone.png" />
+    <link rel="stylesheet" href="style.css"> <style>
+        
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <img src="Imagens/icone.png" alt="MegaSky Logo" class="logo">
+            <div class="nav-area">
+                <nav class="menu">
+                    <a href="index.html">Início</a>
+                    <a href="Noticias.html">Notícias</a>
+                    <a href="equipe.html">Equipe</a>
+                    <a href="Comandos.html">Comandos</a>
+                    <a href="minigames.html">Minigames</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="inicial-banner">
+  <div class="container">
+    <img src="Imagens/banner.png" alt="Banner da Página Inicial" class="banner-inicial-img">
+  </div>
+</section>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="page-title-section" style="padding-top: 80px; text-align: center; margin-bottom: 40px;">
+                <h1 style="font-size: 3rem; color: var(--orange); margin-bottom: 15px;">LANÇAMENTO OFICIAL DO REMAKE DO SITE!</h1>
+                <p style="font-size: 1.2rem; color: var(--text);">Confira nesta notícia, o que há de novo no site, e o que foi reformulado.</p>
+            </section>
+
+            <section class="content-section" style="margin-bottom: 60px;">
+                <h2 style="font-size: 2rem; color: var(--blue); margin-bottom: 25px; border-bottom: 2px solid var(--orange); padding-bottom: 10px;">MUDANÇAS</h2>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text);">
+                    Confira as mudanças do site nesta seção.
+                </p>
+                <ul style="list-style-type: disc; margin-left: 20px; margin-top: 20px; color: var(--text);">
+                    <li>[=] Reformulado página inicial, adicionando espaço para até 3 noticias com breve descrição. </li>
+                    <li>[-] Removido letreiro animado do site.
+                    <li>[+] Adicionado modo escuro e modo claro, que pode ser ativado e desativado em um botão no header.</li>
+                    <li>[+] Adicionado frases da staff na página da equipe.</li>
+                    <li>[+] Adicionado campo de busca na página de comandos.</li>
+                    <li>[+] Adicionado todos os minigames disponíveis e que vão estar disponíveis na página de servidores. </li>
+                    <li>[=] Reformulado layout do site.</li>
+                </ul>
+            </section>
+
+            </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 MegaSky Network - Todos os direitos reservados. | Desenvolvido com amor por Rayoziny⚡🌙</p>
+            <div class="social">
+        <a href="https://x.com/MegaSkyNetwork">Twitter</a>
+        <a href="https://www.instagram.com/megaskynetworkk/">Instagram</a>
+        <a href="https://www.youtube.com/@MegaSkyNetwork">YouTube</a>
+        <a href="Contato.html">Contate-me</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+  const toggle = document.getElementById('themeToggle');
+  const root = document.documentElement;
+
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      const atual = root.getAttribute('data-theme');
+      const novoTema = atual === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', novoTema);
+      
+      toggle.textContent = novoTema === 'dark' ? '🌙' : '☀️';
+
+      localStorage.setItem('tema', novoTema);
+    });
+
+    const temaSalvo = localStorage.getItem('tema');
+    if (temaSalvo) {
+      root.setAttribute('data-theme', temaSalvo);
+      toggle.textContent = temaSalvo === 'dark' ? '🌙' : '☀️';
+    }
+  }
+    </script>
+
+    </body>
+</html>

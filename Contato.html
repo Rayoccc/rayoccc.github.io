@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - MegaSky Network</title>
+    <link rel="icon" href="Imagens/icone.png" />
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <img src="Imagens/icone.png" alt="MegaSky Logo" class="logo">
+            <div class="nav-area">
+                <nav class="menu">
+                    <a href="index.html">Início</a>
+                    <a href="noticias.html">Notícias</a>
+                    <a href="equipe.html">Equipe</a>
+                    <a href="comandos.html">Comandos</a>
+                    <a href="minigames.html">Minigames</a>
+                    <a href="#">Contato</a>
+                </nav>
+                <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="contact-section">
+        <div class="container">
+            <h1 class="section-title">Entre em Contato</h1>
+            <p class="section-description">Tem alguma dúvida, sugestão ou quer reportar algo? Envie-nos uma mensagem!</p>
+
+            <div class="contact-form-container">
+                <form action="https://formsubmit.co/rayozinycomercial@gmail.com" method="POST" class="contact-form">
+                    <input type="hidden" name="_captcha" value="false"> <input type="hidden" name="_next" value="https://SEU_SITE.COM/contato.html?success=true">
+                    <input type="hidden" name="_subject" value="Nova Mensagem do Site MegaSky Network!"> <div class="form-group">
+                        <label for="name">Seu Nome:</label>
+                        <input type="text" id="name" name="Nome" placeholder="Seu nome completo" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Seu E-mail:</label>
+                        <input type="email" id="email" name="Email" placeholder="seu.email@exemplo.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Assunto:</label>
+                        <input type="text" id="subject" name="Assunto" placeholder="Assunto da mensagem" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Sua Mensagem:</label>
+                        <textarea id="message" name="Mensagem" placeholder="Escreva sua mensagem aqui..." required></textarea>
+                    </div>
+
+                    <button type="submit">Enviar Mensagem</button>
+                </form>
+
+                <div id="successMessage" class="success-message">
+                    Sua mensagem foi enviada com sucesso! Em breve entraremos em contato.
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 MegaSky Network - Todos os direitos reservados. | Desenvolvido com amor por Rayoziny⚡🌙</p>
+            <div class="social">
+        <a href="https://x.com/MegaSkyNetwork">Twitter</a>
+        <a href="https://www.instagram.com/megaskynetworkk/">Instagram</a>
+        <a href="https://www.youtube.com/@MegaSkyNetwork">YouTube</a>
+        <a href="Contato.html">Contate-me</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+  const toggle = document.getElementById('themeToggle');
+  const root = document.documentElement;
+
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      const atual = root.getAttribute('data-theme');
+      const novoTema = atual === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', novoTema);
+      
+      toggle.textContent = novoTema === 'dark' ? '🌙' : '☀️';
+
+      localStorage.setItem('tema', novoTema);
+    });
+
+    const temaSalvo = localStorage.getItem('tema');
+    if (temaSalvo) {
+      root.setAttribute('data-theme', temaSalvo);
+      toggle.textContent = temaSalvo === 'dark' ? '🌙' : '☀️';
+    }
+  }
+
+        // Script para exibir mensagem de sucesso após o FormSubmit redirecionar
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('success') === 'true') {
+                document.getElementById('successMessage').style.display = 'block';
+                // Opcional: Remover o parâmetro 'success' da URL após exibir a mensagem
+                setTimeout(() => {
+                    window.history.replaceState(null, '', window.location.pathname);
+                }, 3000); // Remove após 3 segundos
+            }
+        });
+
+
+    </script>
+
+</body>
+</html>

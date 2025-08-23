@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MegaSky Network - Equipe</title>
+    <link rel="icon" href="Imagens/icone.png" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <img src="Imagens/icone.png" alt="MegaSky Logo" class="logo">
+            <div class="nav-area">
+                <nav class="menu">
+                        <a href="index.html">Início</a>
+                        <a href="Noticias.html">Notícias</a>
+                        <a href="#">Equipe</a>
+                        <a href="Comandos.html">Comandos</a>
+                        <a href="minigames.html">Minigames</a>
+                </nav>
+                <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="equipe-banner">
+  <div class="container">
+    <img src="Imagens/Equipe.png" alt="Banner da Equipe" class="banner-equipe-img">
+  </div>
+</section>
+
+    <section class="team-section">
+        <div class="container">
+            <h2>Nossa Equipe</h2>
+
+            <h3 class="role-title ceo-title">CEO</h3>
+            <div class="team-grid">
+                <div class="team-member" data-member-id="rayoziny">
+                    <img src="https://minotar.net/helm/Rayoziny/100.png" alt="Skin do Rayoziny" class="member-skin">
+                    <h3>Rayoziny</h3>
+                    <p class="member-phrase">" - Aqueles que duvidam, cairão em <strong>lágrimas</strong>.."</p>
+                </div>
+                <div class="team-member" data-member-id="tiojax">
+                    <img src="https://minotar.net/helm/TioJax/100.png" alt="Skin do TioJax" class="member-skin">
+                    <h3>TioJax</h3>
+                    <p class="member-phrase">"- Quem vai encarar o <strong>campeão</strong>"</p>
+                </div>
+            </div>
+
+            <h3 class="role-title admin-title">Administrador</h3>
+            <div class="team-grid">
+                <div class="team-member" data-member-id="leoonly">
+                    <img src="https://minotar.net/helm/leoonly/100.png" alt="Skin do leoonly" class="member-skin">
+                    <h3>leoonly</h3>
+                    <p class="member-phrase">"- O mundo é dos espertos, mas o céu é dos escolhidos"</p>
+                </div>
+            </div>
+
+           <h3 class="role-title builder-title">BUILDER</h3>
+         <div class="team-grid">
+            <div class="team-member">
+                <img src="https://minotar.net/helm/_zR31V4G0Dz_/100.png" alt="Skin do _zR31V4G0Dz_" class="member-skin">
+                <h3>_zR31V4G0Dz_</h3>
+                <p class="member-phrase">"- Manda o pix!"</p>
+            </div>
+         </div>
+
+            <h3 class="role-title studio-title">STUDIO</h3>
+            <div class="team-grid">
+                <div class="team-member" data-member-id="cubedpontocom">
+                    <img src="https://minotar.net/helm/cubedpontocom/100.png" alt="Skin do cubedpontocom" class="member-skin">
+                    <h3>cubedpontocom</h3>
+                    <p class="member-phrase">"- Difícil, cara"</p>
+                </div>
+                <div class="team-member" data-member-id="prisoner">
+                    <img src="https://minotar.net/helm/prisoner/100.png" alt="Skin do prisoner" class="member-skin">
+                    <h3>prisoner</h3>
+                    <p class="member-phrase">Insira Texto</p>
+                </div>
+                <div class="team-member" data-member-id="lordzeusbr14">
+                    <img src="https://minotar.net/helm/Lordzeusbr14/100.png" alt="Skin do Lordzeusbr14" class="member-skin">
+                    <h3>Lordzeusbr14</h3>
+                    <p class="member-phrase">"- Credo ut intelligam, intelligo ut credam"</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 MegaSky Network - Todos os direitos reservados. | Desenvolvido com amor por Rayoziny⚡🌙</p>
+            <div class="social">
+        <a href="https://x.com/MegaSkyNetwork">Twitter</a>
+        <a href="https://www.instagram.com/megaskynetworkk/">Instagram</a>
+        <a href="https://www.youtube.com/@MegaSkyNetwork">YouTube</a>
+        <a href="Contato.html">Contate-me</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+  const toggle = document.getElementById('themeToggle');
+  const root = document.documentElement;
+
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      const atual = root.getAttribute('data-theme');
+      const novoTema = atual === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', novoTema);
+      
+      toggle.textContent = novoTema === 'dark' ? '🌙' : '☀️';
+
+      localStorage.setItem('tema', novoTema);
+    });
+
+    const temaSalvo = localStorage.getItem('tema');
+    if (temaSalvo) {
+      root.setAttribute('data-theme', temaSalvo);
+      toggle.textContent = temaSalvo === 'dark' ? '🌙' : '☀️';
+    }
+  }
+    </script>
+
+</body>
+</html>

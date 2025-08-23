@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias - MegaSky Network</title>
+    <link rel="icon" href="Imagens/icone.png" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <img src="Imagens/icone.png" alt="MegaSky Logo" class="logo">
+            <div class="nav-area">
+                <nav class="menu">
+                    <a href="index.html">Início</a>
+                    <a href="#">Notícias</a>
+                    <a href="equipe.html">Equipe</a>
+                    <a href="Comandos.html">Comandos</a>
+                    <a href="minigames.html">Minigames</a>
+                </nav>
+                <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="news-section">
+        <div class="container">
+            <h1 class="section-title">Últimas Notícias</h1>
+            <p class="section-description">Fique por dentro de todas as novidades e atualizações da MegaSky Network!</p>
+
+            <div class="news-grid">
+                <article class="news-card">
+                    <img src="Imagens/banner.png" alt="Imagem da Notícia 1" class="news-image">
+                    <div class="news-content">
+                        <h2 class="news-title">LANÇAMENTO OFICIAL DO REMAKE DO SITE!</h2>
+                        <p class="news-meta">Publicado em 27 de Junho de 2025 | Categoria: Atualizações</p>
+                        <p class="news-excerpt">Descubra as novas features e aproveite o novo layout do site, com um modo escuro implementado!</p>
+                        <a href="remakedosite.html" class="read-more-button">Ler Mais</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 MegaSky Network - Todos os direitos reservados. | Desenvolvido com amor por Rayoziny⚡🌙</p>
+            <div class="social">
+        <a href="https://x.com/MegaSkyNetwork">Twitter</a>
+        <a href="https://www.instagram.com/megaskynetworkk/">Instagram</a>
+        <a href="https://www.youtube.com/@MegaSkyNetwork">YouTube</a>
+        <a href="Contato.html">Contate-me</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+  const toggle = document.getElementById('themeToggle');
+  const root = document.documentElement;
+
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      const atual = root.getAttribute('data-theme');
+      const novoTema = atual === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', novoTema);
+      
+      toggle.textContent = novoTema === 'dark' ? '🌙' : '☀️';
+
+      localStorage.setItem('tema', novoTema);
+    });
+
+    const temaSalvo = localStorage.getItem('tema');
+    if (temaSalvo) {
+      root.setAttribute('data-theme', temaSalvo);
+      toggle.textContent = temaSalvo === 'dark' ? '🌙' : '☀️';
+    }
+  }
+    </script>
+
+</body>
+</html>
