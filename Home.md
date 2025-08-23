@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MegaSky Network</title>
+    <link rel="icon" href="Imagens/icone.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <img src="Imagens/icone.png" alt="MegaSky Logo" class="logo">
+    <div class="nav-area">
+      <nav class="menu">
+        <a href="#">Início</a>
+        <a href="Noticias.html">Notícias</a>
+        <a href="Equipe.html">Equipe</a>
+        <a href="Comandos.html">Comandos</a>
+        <a href="minigames.html">Minigames</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">🌙</button>
+    </div>
+  </div>
+</header>
+
+    <section class="inicial-banner">
+  <div class="container">
+    <img src="Imagens/banner.png" alt="Banner da Página Inicial" class="banner-inicial-img">
+  </div>
+</section>
+  <section class="noticias">
+    <div class="container">
+      <h2>Últimas Notícias</h2>
+      <div class="news-list">
+        <article class="noticia">
+          <img src="Imagens/icone.png" alt="Notícia" />
+          <div>
+            <h3>LANÇAMENTO OFICIAL DO REMAKE DO SITE!</h3>
+            <p>Confira as mudanças!</p>
+            <a href="remakesite.html">Leia mais</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="discord">
+    <div class="container">
+      <h2>Junte-se ao nosso Discord</h2>
+      <iframe src="https://discord.com/widget?id=1237165094702547075&theme=dark" width="100%" height="300" allowtransparency="true" frameborder="0"></iframe>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 MegaSky Network - Todos os direitos reservados. | Desenvolvido com amor por Rayoziny⚡🌙</p>
+      <div class="social">
+        <a href="https://x.com/MegaSkyNetwork">Twitter</a>
+        <a href="https://www.instagram.com/megaskynetworkk/">Instagram</a>
+        <a href="https://www.youtube.com/@MegaSkyNetwork">YouTube</a>
+        <a href="Contato.html">Contate-me</a>
+      </div>
+    </div>
+  </footer>
+<script>
+  const toggle = document.getElementById('themeToggle');
+  const root = document.documentElement;
+
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      const atual = root.getAttribute('data-theme');
+      const novoTema = atual === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', novoTema);
+      
+      toggle.textContent = novoTema === 'dark' ? '🌙' : '☀️';
+
+      localStorage.setItem('tema', novoTema);
+    });
+
+    const temaSalvo = localStorage.getItem('tema');
+    if (temaSalvo) {
+      root.setAttribute('data-theme', temaSalvo);
+      toggle.textContent = temaSalvo === 'dark' ? '🌙' : '☀️';
+    }
+  }
+
+</script>
+
+</body>
+</html>
